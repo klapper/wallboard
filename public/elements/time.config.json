@@ -1,0 +1,29 @@
+[  
+  {
+    "name":"text_color",
+    "display_name":"Text color",
+    "description":"",
+    "type":"color_chooser",
+    "value":"#ffffff"
+  },
+  {
+    "name":"background_color",
+    "display_name":"Background color",
+    "description":"",
+    "type":"color_chooser",
+    "value":"#7b85a6"
+  },
+  {
+    "name":"text_size",
+    "display_name":"Text Size",
+    "description":"Size of the text, percentage of viewport width",
+    "type":"text",
+    "value":"1"
+  },  
+  {
+    "name":"date_format",
+    "display_name":"Date format",
+    "description":"Date format (ex: yyyy-MM-dd hh:mm:ss)",
+    "type":"text"
+  }  
+]

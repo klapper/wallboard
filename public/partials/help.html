@@ -1,0 +1,76 @@
+<div class="container">
+<div class="page-header">
+<h1>Help</h1>
+</div>
+<h2>Linux, command line with curl</h2>
+<code> curl -X POST -H "Content-Type: application/json" -d '{"stream_name":"element1","value":"4"}' https://servername/send</code>
+<h2>Python</h2>
+<code>import urllib2<br>
+import json<br>
+<br>
+wallboard_url = 'https://servername/send'
+data = json.dumps({"stream_name":"element1","value":5})<br>
+request = urllib2.Request(wallboard_url, data, {'Content-Type': 'application/json', 'Content-Length':len(data)})<br>
+response = urllib2.urlopen(request)<br>
+</code>
+<h2>Powershell</h2>
+<code>Invoke-WebRequest -Uri https://servername/send -Method POST -ContentType 'application/json;' -Body ([System.Text.Encoding]::UTF8.GetBytes('{"stream_name":"Msg_BU_Camp_1","value":"Árvíztűrőtükörfúrógép"}'))</code>
+<h2>Lotusscript</h2>
+<h2>Excel</h2>
+Create a new workbook sheet named "Wallboard"<br>
+
+<code>Sub send_to_dashboard()<br>
+  Sheets("wallboard").Activate<br>
+  lastrow = Range("A1:A65536").End(xlDown).Row<br>
+  For i = 2 To lastrow<br>
+    Dim data_stream_name<br>
+    Dim data_value<br>
+    data_stream_name = Cells(i, 1).Value<br>
+    data_value = Str(Cells(i, 2).Value)<br>
+    Data = "{""stream_name"":""" + data_stream_name + """,""value"":""" + data_value + """}"<br>
+    Set oHTTP = CreateObject("Microsoft.XMLHTTP")<br>
+    oHTTP.Open "POST", "https://servername/send", False<br>
+    oHTTP.setRequestHeader "Content-Type", "application/json"<br>
+    oHTTP.setRequestHeader "Content-Length", Len(Data)<br>
+    oHTTP.send Data<br>
+    HTTPPost = oHTTP.responseText<br>
+    If InStr(HTTPPost, """success"": true") > 0 Then<br>
+      Cells(i, 3).Value = Now<br>
+    End If<br>
+  Next<br>
+End Sub<br></code>
+
+<h2>Javascript</h2>
+<code>
+xmlhttp.open("POST","https://servername/send",true);<br>
+xmlhttp.setRequestHeader("Content-type","application/json");<br>
+xmlhttp.send('{"stream_name":"element1","value":5}');<br>
+</code>
+<h2>JQuery</h2>
+<code>
+$.post("https://servername/send", { stream_name: "element1", value: 3 } );
+</code>
+
+<h1>Data format</h1>
+<h2>For single value</h2>
+{
+ "stream_name":"your stream name",
+ "value":"your vylue"
+}
+<h2>For table</h2>
+{
+   "stream_name":"your stream name",
+   "value":[
+              ["column header 1","column header2","column header3"],
+              ["row1 col1 value","row1 col2 value", "row1 col 3 value"],
+              ["row2 col1 value","row2 col2 value", "row2 col 3 value"],
+              ["row3 col1 value","row3 col2 value", "row3 col 3 value"]
+           ]
+}
+<h2>For list</h2>
+{
+   "stream_name":"your stream name",
+   "value":[ "list item 1" , "list item 2", "list item 3" ]
+}
+
+</div>

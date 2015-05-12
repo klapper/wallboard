@@ -1,0 +1,45 @@
+<div ng-controller="HomeCtrl">
+	<div class="container">
+		<div class="row">
+			<div class="panel col-sm-offset-2 col-sm-8">
+				<div class="panel-body text-center">
+					<div class="section-number">
+						<p>1</p>
+					</div>
+					<div class="welcome-section-header">
+						<p>View public boards or create a new one?</p>
+					</div>
+					<div class="welcome-section-body">
+						<p>Everyone can view, edit or create public boards</p>
+					</div>
+					<div class="btn-group welcome-section-footer">
+						<div type="button" class="btn btn-default" ng-class="{active: selected=='public'}"
+							ng-click="selected = 'public'">Show public boards</div>
+						<div type="button" class="btn btn-default" ng-class="{active: selected=='create_new'}"
+							ng-click="selected = 'create_new'">Create a new one</div>
+						<div type="button" class="btn btn-default" ng-class="{active: selected=='help'}"
+							ng-click="selected = 'help'">Get help</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div ng-if="selected == 'public'">
+		<section class="welcome-section section">
+			<div class="animated fadeInRightSmall" ng-include
+				src="'/partials/home.public.html'" />
+		</section>
+	</div>
+	<div ng-if="selected == 'create_new'">
+		<section class="welcome-section section">
+			<div class="animated fadeInRightSmall" ng-include
+				src="'/partials/home.new_board.html'" />
+		</section>
+	</div>
+	<div ng-if="selected == 'help'">
+		<section class="welcome-section section">
+			<div class="animated fadeInRightSmall" ng-include
+				src="'/partials/home.help.html'" />
+		</section>
+	</div>
+</div>

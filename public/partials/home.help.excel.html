@@ -1,0 +1,26 @@
+<div>
+	<div class="container">
+		<div class="row">
+			<div class="panel col-sm-offset-2 col-sm-8">
+				<div class="panel-body text-center">
+					<div class="section-number">
+						<p>3</p>
+					</div>
+					<div class="welcome-section-header">
+						<p>Sending updates from Excel</p>
+					</div>
+					<div class="welcome-section-body">
+				        <p>Download sample excel workbook that contains one sheet named "Wallboard" and a macro to send data</p>
+					    <a class="btn btn-primary" href="/public/help/Wallboard_sample_excel.xls">Download</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+<div class="container">
+    <div in-view="dyk_is_in_view=(dyk_is_in_view || $inview)"  class="welcome-section section">
+	    <div ng-show="dyk_is_in_view" class="animated fadeInRightSmall" ng-include src="'/partials/home.did_you_know.html'" />
+    </div>
+</div>

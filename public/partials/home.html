@@ -1,0 +1,33 @@
+<div class="container-fluid welcome-header">
+	<div class="welcome">
+		<h1>Wallboard</h1>
+		<p class="lead animated zoomIn">Real time dashboards for everyone</p>
+	</div>
+	<div class="row welcome-features">
+		<div class="col-sm-4 welcome-feature animated fadeInLeft">
+			<i class="fa fa-edit fa-4x welcome-feature-icon"></i>
+			<h4>Visual dashboard editor</h4>
+			<p>Easily rearrange layout, add new widgets</p>
+		</div>
+		<div class="col-sm-4 welcome-feature animated fadeInUp">
+			<i class="fa fa-gears fa-4x welcome-feature-icon"></i>
+			<h4>Show data from any source</h4>
+			<p>From Excel to real-time Call Center statistics</p>
+		</div>
+		<div class="col-sm-4 welcome-feature animated fadeInRight">
+			<i class="fa fa-desktop fa-4x welcome-feature-icon"></i>
+			<h4>Optimized for big screen TV</h4>
+			<p>See key metrics in one place</p>
+		</div>
+	</div>
+</div>
+<div class="container-fluid welcome-sections">
+	<div class="welcome-section section">
+	    <div in-view="step1_is_in_view=(step1_is_in_view || $inview)" ng-class="{'animated fadeInRightSmall':step1_is_in_view}" style="opacity:0" ng-include src="'/partials/home.step1.html'"/>
+	</div>
+</div>
+<div class="container-fluid footer text-center animated fadeInDelay">
+<div class="row">
+Wallboard version 0.4.4
+</div>
+</div>

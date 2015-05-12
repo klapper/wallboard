@@ -1,0 +1,29 @@
+{
+  "name": "wallboard",
+  "version": "0.4.4",
+  "description": "Wallboard with real-time updates",
+  "author": "Attila Klapper",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "3.2.6",
+    "jade": "*",
+    "socket.io": "1.0.4",
+    "mongoose": ">3.8.0",
+    "underscore": "1.*",
+    "winston": "0.7.3",
+    "async": "0.9.0"
+  },
+  "devDependencies": {
+    "node-inspector": "*",
+    "grunt": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-cssmin": "*"
+  },
+  "bundledDependencies": [
+    "express","jade","socket.io","mongoose","underscore","winston","async"
+  ]
+}

@@ -1,0 +1,15 @@
+[
+  {
+    "name":"url",
+    "display_name":"URL",
+    "description":"URL of the image, relative or absoulte url",
+    "type":"text"
+  },
+  {
+    "name":"background_color",
+    "display_name":"background color",
+    "description":"Color of the tile background",
+    "type":"color_chooser",
+    "value":"#000000"
+  }
+ ]

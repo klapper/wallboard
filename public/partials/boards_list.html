@@ -1,0 +1,60 @@
+<div class="container-fluid welcome-header">
+<div class="welcome">
+<h1>Wallboard</h1>
+<p class="lead">Real time dashboards for everyone</p>
+</div>
+<div class="row">
+  <div class="col-xs-4 welcome-features">
+      <i class="fa fa-edit fa-4x"></i>
+      <h4>Visual dashboard editor</h4>
+      <p>Easily rearrange layout, add new widgets</p>
+    </div>
+  <div class="col-xs-4 welcome-features">
+      <i class="fa fa-gears fa-4x"></i>
+      <h4>Show data from any source</h4>
+      <p></p>
+    </div>
+  <div class="col-xs-4 welcome-features">
+      <i class="fa fa-desktop fa-4x"></i>
+      <h4>Optimized for big screen TV</h4>
+      <p>See key metrics in one place</p>
+    </div>
+</div>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-sm-offset-3 col-sm-6">
+<ui class="nav nav-pills nav-justified home-nav">
+  <li><a href="#">Login</a></li>
+  <li class="active"><a href="#">Public boards</a></li>
+  <li><a href="#">Help</a></li>
+
+</ui>
+</div>
+</div>
+<div class="row">
+	<div class="col-xs-5">
+		<a href="#/newBoard" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span> New Board</a>
+	</div>
+	<div class="col-xs-7">
+		<input type="text" class="form-control" ng-model="query" placeholder="Search for a board">
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-12"><hr></div>
+</div>
+<div class="row" ng-switch on="boards.length">
+	<ul ng-switch-when="0">
+		<li><em>No boards defined yet. Would you like to <a href="#/newBoard">create one</a>?</li>
+	</ul>
+	<ul ng-switch-default>
+		<li ng-repeat="board in boards | filter:query">
+			<a ng-href="#/board/{{board._id}}">{{board.name}}</a>
+		</li>
+	</ul>
+</div>
+<p>&nbsp;</p>
+<hr>
+<a class="btn btn-default" href="#/help">Help</a>
+</div>
+</div>

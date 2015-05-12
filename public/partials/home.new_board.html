@@ -1,0 +1,66 @@
+<div class="container">
+	<div class="row">
+		<div class="panel col-sm-offset-2 col-sm-8">
+			<div class="panel-body text-center">
+				<div class="section-number">
+					<p>2</p>
+				</div>
+
+					<div class="welcome-section-header">
+						<p>Create a new board</p>
+					</div>
+
+				<div ng-show="new_board_state=='initial'">
+					<form name="create_new_form" role="form" class="form-horizontal"
+						ng-submit="createBoard()" novalidate>
+						<div class="form-group"
+							ng-class="{'has-error': create_new_form.name.$invalid && create_new_form.name.$dirty}">
+							<label class="col-sm-3 control-label">Name</label>
+							<div class="col-sm-8">
+								<input type="text" name="name" ng-model="new_board.name"
+									required class="form-control" placeholder="Enter board name">
+							</div>
+						</div>
+						<div class="form-group"
+							ng-class="{'has-error': create_new_form.aspect_ratio.$invalid && create_new_form.aspect_ratio.$dirty}">
+							<label class="col-sm-3 control-label">Aspect ratio</label>
+							<div class="col-sm-8">
+								<input name="aspect_ratio" type="text"
+									ng-model="new_board.aspect_ratio" required
+									ng-init="board.aspect_ratio='16/9'" class="form-control"
+									placeholder="Aspect ratio">
+								<p class="help-block text-left">Use 16/9 for TV, 4/3 for
+									desktop monitor or iPad</p>
+							</div>
+						</div>
+			         	<div ng-show="new_board_last_error!=undefined" class="text-danger">
+					        <span class="fa fa-exclamation-triangle fa-5x text-danger"></span>
+					        <p>Can not save dashboard, because: {{new_board_last_error}}</p>				
+				        </div>						
+						<div
+							tooltip="{{create_new_form.$invalid ? 'Please fill out the form':'' }}"
+							tooltip-placement="bottom">
+							<button ng-disabled="create_new_form.$invalid"
+								class="btn btn-primary" type="submit">{{new_board_last_error!=undefined? "Retry":"Create board"}}</button>
+						</div>
+						<p>&nbsp;</p>
+					</form>
+				</div>
+				<div ng-show="new_board_state=='saving'">
+					<span class="fa fa-cog fa-spin fa-5x"></span>
+					<p>Saving ...</p>
+				</div>
+				<div ng-show="new_board_state=='saved'">
+					<span class="fa fa-check fa-5x text-success"></span>
+					<p>Saved successfully.</p>
+				</div>				
+			</div>
+		</div>
+	</div>
+</div>
+	<div ng-if="new_board_state== 'saved'">
+		<section class="welcome-section section">
+			<div class="animated fadeInRightSmall" ng-include
+				src="'/partials/home.new_board.go.html'" />
+		</section>
+	</div>

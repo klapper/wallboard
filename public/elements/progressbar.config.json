@@ -1,0 +1,36 @@
+  [
+    {
+      "name":"stream_name",
+      "diplay_name":"Stream name",
+      "description":"Please specify the stream name",
+      "type":"stream_selector"
+    },
+    {
+      "name":"progress_color",
+      "display_name":"Progress Color",
+      "description":"Color of progressbar",
+      "type":"color_chooser",
+      "value":"#50e84b"
+    },    
+    {
+      "name":"min_value",
+      "diplay_name":"Minimum value",
+      "description":"",
+      "type":"text",
+      "value":0
+    },
+    {
+      "name":"max_value",
+      "diplay_name":"Maximum value",
+      "description":"",
+      "type":"text",
+      "value":100
+    },
+   {
+    "name":"background_color",
+    "display_name":"Background color",
+    "description":"Color of the tile's background",
+    "type":"color_chooser",
+    "value":"#000000"
+  }
+  ]

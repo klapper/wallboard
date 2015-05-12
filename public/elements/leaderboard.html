@@ -1,0 +1,46 @@
+<div ng-style='{"overflow":"hidden","min-height":"100%","min-width":"100%","max-width":"100%","max-height":"100%","background-color":data.template_config.background_color}'>
+    <div ng-style='{"top":"0%","position":"absolute","width":"100%","height":"100%"}'>
+        <h4 ng-style='{"font-size":"1vw",
+                      "color":data.template_config.header_text_color,
+                      "position":"relative",
+                      "font-weight":300}'>
+           {{data.template_config.header_text}}
+       </h4>
+       <div ng-style='{"color":data.template_config.text_color,"font-size": data.template_config.text_size + "vw"}'>
+       <!-- 
+           <div ng-repeat="dataitem in data.value" ng-style='{"color":data.template_config.text_color,"height":data.template_config.text_size + "vh","margin-bottom":"3vh"}'>
+             <div ng-style='{"width":data.template_config.text_size*3.5 + "vh","height":data.template_config.text_size*3.5 + "vh","overflow":"hidden","float":"left"}'>
+                 <img class="img-rounded" ng-style='{"max-height":"100%","max-width":"100%","text-align":"left"}' ng-src="{{dataitem.image_url}}"/>
+             </div>
+             <div ng-style='{"width":"100%","height":data.template_config.text_size*3.5 + "vh","font-size": data.template_config.text_size + "vh","float":"left","padding-left":"1vh","overflow":"hidden"}'>
+                 <p class="text-center">{{dataitem.name}}</p>
+             </div>
+             <div ng-style='{"width":"20%","height":data.template_config.text_size*3.5 + "vh","font-size": data.template_config.text_size + "vh","float":"left","padding-left":"1vh"}'>
+                 <p class="text-center">{{dataitem.point}}</p>
+             </div>
+           </div>
+            -->
+            <div>
+              <img ng-style='{"max-height":data.template_config.text_size*6.5 + "vw","max-width":data.template_config.text_size*6.5 + "vw"}' class="img-circle" ng-src="{{data.value[0].image_url}}"/>
+              <p>{{data.value[0].name}}</p>
+              <p ng-style='{"font-weight":"300"}'>{{data.value[0].point}}</p>
+            </div>
+			<table
+				ng-style='{"color":data.template_config.text_color,"width":"100%", "font-size": data.template_config.text_size + "vw"}'>
+				<tr ng-repeat="dataitem in data.value track by $index" ng-if="$index!=0">
+					<td ng-style='{"height":data.template_config.text_size*3.5 + "vw","width":data.template_config.text_size*3.5 + "vw"}'>
+						<img class="img-circle"
+						ng-style='{"max-height":data.template_config.text_size*3.5 + "vw","max-width":data.template_config.text_size*3.5 + "vw","text-align":"left"}'
+						ng-src="{{dataitem.image_url}}" />
+					</td>
+					<td ng-style='{"height":data.template_config.text_size*3.5 + "vw"}'>
+						{{dataitem.name}}
+					</td>
+					<td ng-style='{"height":data.template_config.text_size*3.5 + "vw","font-weight":"300"}'>
+						{{dataitem.point}}
+					</td>
+				</tr>
+			</table>
+		</div>
+    </div>  
+</div>

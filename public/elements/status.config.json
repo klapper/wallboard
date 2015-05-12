@@ -1,0 +1,52 @@
+[
+  {
+    "name":"stream_name",
+    "display_name":"Stream name",
+    "description":"Please specify the stream name",
+    "type":"stream_selector"
+  },
+  {
+   "type":"divider"
+  },
+  {
+    "name":"header_text",
+    "display_name":"Header text",
+    "description":"Shows a header text above the value",
+    "type":"text"
+  },
+  {
+    "name":"header_text_size",
+    "display_name":"Header text size",
+    "description":"Size of the header",
+    "type":"text",
+    "value":"2"
+  },  
+  {
+    "name":"icon_size",
+    "display_name":"Icon Size",
+    "description":"Size of the icon, percentage of viewport width",
+    "type":"text",
+    "value":"4"
+  },  
+  {
+    "name":"header_text_color",
+    "display_name":"Header Text Color",
+    "description":"Color of the header text",
+    "type":"color_chooser",
+    "value":"#c0c0c0"
+  },
+  {
+    "name":"background_color",
+    "display_name":"Background color",
+    "description":"Color of the tile's background",
+    "type":"color_chooser",
+    "value":"#7b85a6"
+  },
+  {
+    "name":"background_image",
+    "display_name":"Background image",
+    "description":"url of the background image",
+    "type":"text",
+    "value":""
+  }  
+]

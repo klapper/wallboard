@@ -1,0 +1,9 @@
+[  
+  {
+    "name":"background_color",
+    "display_name":"Background color",
+    "description":"",
+    "type":"color_chooser",
+    "value":"#7b85a6"
+  }
+]

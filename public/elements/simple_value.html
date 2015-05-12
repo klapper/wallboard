@@ -1,0 +1,33 @@
+<div ng-style='{"overflow":"hidden",
+                "min-height":"100%",
+                "min-width":"100%",
+                "background-color":data.template_config.background_color,
+                "background-image":"url(" + data.template_config.background_image + ")",
+                "background-size":"cover"}'>
+    <div ng-if="data.template_config.icon_overlay != ''">
+        <i class="{{data.template_config.icon_overlay}}" ng-style='{
+            "position": "absolute",
+            "top": 10/9 * data.display_config.sizeY + "vw",
+            "left": "-1vw",
+            "text-align": "center",
+            "font-size": 100/9 * 0.5 * data.display_config.sizeY + "vw",
+            "color": "black",
+            "opacity": "0.17",
+            "transform":"rotate(9deg)"}'>
+         </i>
+    </div>
+        
+    <div ng-style='{"top":"10%","position":"absolute","min-width":"100%"}'>
+        <h4 ng-style='{"font-size":data.template_config.header_text_size + "vw",
+                      "color":data.template_config.header_text_color,
+                      "position":"relative",
+                      "font-weight":300,
+                      "margin-top":"0.1em",
+                      "margin-bottom":"0.1em"}'>
+           {{data.template_config.header_text}}
+       </h4>
+       <p ng-style='{"font-size": data.template_config.text_size + "vw","color":data.template_config.text_color}'>
+           {{data.value}}
+       </p>
+    </div>  
+</div>

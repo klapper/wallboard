@@ -1,0 +1,13 @@
+<div ng-style='{"overflow":"hidden","min-height":"100%","min-width":"100%","background-color":data.template_config.background_color}'>
+    <div ng-style='{"top":"3%","position":"absolute","min-width":"100%"}'>
+        <h4 ng-style='{"font-size":"1vw",
+                      "color":data.template_config.header_text_color,
+                      "position":"relative",
+                      "font-weight":300}'>
+           {{data.template_config.header_text}}
+       </h4>
+       <p ng-repeat="dataitem in data.value" ng-style='{"font-size": data.template_config.text_size / data.value.length*10 + "vw","color":data.template_config.text_color}'>
+           {{dataitem}}
+       </p>
+    </div>  
+</div>

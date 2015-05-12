@@ -1,0 +1,46 @@
+<div>
+	<div class="container">
+		<div class="row">
+			<div class="panel col-sm-offset-2 col-sm-8">
+				<div class="panel-body text-center">
+					<div class="section-number">
+						<p>3</p>
+					</div>
+					<div class="welcome-section-header">
+						<p>What programming language are you using?</p>
+					</div>
+					<div class="welcome-section-body">
+					</div>
+					<div class="btn-group welcome-section-footer">
+						<div type="button" class="btn btn-default" ng-class="{active: selected=='python'}"
+							ng-click="selected = 'python'">Python</div>
+						<div type="button" class="btn btn-default" ng-class="{active: selected=='java'}"
+							ng-click="selected = 'java'">Java</div>
+						<div type="button" class="btn btn-default" ng-class="{active: selected=='powershell'}"
+							ng-click="selected = 'powershell'">Powershell</div>
+						<div type="button" class="btn btn-default" ng-class="{active: selected=='javascript'}"
+							ng-click="selected = 'javascript'">Javascript</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div ng-if="selected == 'python'">
+		<section class="welcome-section section">
+			<div class="animated fadeInRightSmall" ng-include
+				src="'/partials/home.help.prog.python.html'" />
+		</section>
+	</div>
+	<div ng-if="selected == 'powershell'">
+		<section class="welcome-section section">
+			<div class="animated fadeInRightSmall" ng-include
+				src="'/partials/home.help.prog.powershell.html'" />
+		</section>
+	</div>	
+	<div ng-if="selected == 'javascript'">
+		<section class="welcome-section section">
+			<div class="animated fadeInRightSmall" ng-include
+				src="'/partials/home.help.prog.javascript.html'" />
+		</section>
+	</div>	
+</div>

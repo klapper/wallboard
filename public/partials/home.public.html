@@ -1,0 +1,40 @@
+<div class="container">
+	<div class="row">
+		<div class="panel col-sm-offset-2 col-sm-8">
+			<div class="panel-body  text-center">
+					<div class="section-number">
+						<p>2</p>
+					</div>
+				<div class="welcome-section-header">
+					<p>Here's a list of public boards</p>
+				</div>
+				<div class="">
+					<input type="text" class="form-control" ng-model="query"
+						placeholder="Search for a board">
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<hr>
+					</div>
+				</div>
+				<div class="row" ng-switch on="boards.length">
+					<ul ng-switch-when="0">
+						<li><em>No boards defined yet. Would you like to <a
+								href="#/newBoard">create one</a>?</li>
+					</ul>
+					<div class="col-sm-4 col-lg-3"
+						ng-repeat="board in boards | filter:query">
+						<div class="board-tile">
+							<a class="thumbnail" ng-href="#/board/{{board._id}}">{{board.name}}</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container">
+    <div in-view="dyk_is_in_view=(dyk_is_in_view || $inview)"  class="welcome-section section">
+	    <div ng-show="dyk_is_in_view" class="animated fadeInRightSmall" ng-include src="'/partials/home.did_you_know.html'" />
+    </div>
+</div>

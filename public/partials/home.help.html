@@ -1,0 +1,47 @@
+<div class="container">
+	<div class="row">
+		<div class="panel col-sm-offset-2 col-sm-8">
+			<div class="panel-body text-center">
+				<div class="section-number">
+					<p>2</p>
+				</div>
+				<div class="welcome-section-header">
+					<p>How to send data to a dasboard?</p>
+				</div>
+				<div class="welcome-section-body">
+					<p>You can send data updates from various sources to a
+						dashboard</p>
+				</div>
+				<div class="btn-group welcome-section-footer">
+					<div type="button" class="btn btn-default"
+						ng-class="{active: selected=='excel'}"
+						ng-click="selected = 'excel'">Excel</div>
+					<div type="button" class="btn btn-default"
+						ng-class="{active: selected=='prog'}" ng-click="selected = 'prog'">Programing
+						languages</div>
+					<div type="button" class="btn btn-default"
+						ng-class="{active: selected=='cmd'}" ng-click="selected = 'cmd'">Command
+						line</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div ng-if="selected == 'excel'">
+	<section class="welcome-section section">
+		<div class="animated fadeInRightSmall" ng-include
+			src="'/partials/home.help.excel.html'" />
+	</section>
+</div>
+<div ng-if="selected == 'prog'">
+	<section class="welcome-section section">
+		<div class="animated fadeInRightSmall" ng-include
+			src="'/partials/home.help.prog.html'" />
+	</section>
+</div>
+<div ng-if="selected == 'cmd'">
+	<section class="welcome-section section">
+		<div class="animated fadeInRightSmall" ng-include
+			src="'/partials/home.help.cmd.html'" />
+	</section>
+</div>

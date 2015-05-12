@@ -1,0 +1,32 @@
+<div ng-if="loading" class="loading">
+  <div class="container">
+    <i class="fa fa-cog fa-spin fa-4x"></i>
+    <p>Loading...<p>
+  </div>
+</div>
+<div ng-if="(!loading)">
+   <div ng-if="board.name">
+     <div class="container-fluid" ng-style='{"background-color":"#000000","height":"100%","background-image":"url(\"/img/bg1.jpg\")","background-size":"cover"}'>
+       <div ng-if="elements.length > 0" gridster="gridsterOpts" ng-click="open_AddWidgetDialog()">
+	     <ul>
+		   <li gridster-item="data.display_config" ng-repeat="data in elements" ng-click="open_ConfigWidgetDialog();$event.stopPropagation()">
+             <ng-include src="'/elements/' + data.element_template + '.html'"/>
+	       </li>
+         </ul>
+       </div>
+       <div ng-if="!(elements.length > 0)" class="empty-dashboard text-center" ng-click="open_AddWidgetDialog()" >
+         <p>Your dashboard is empty.</p>
+         <i class="fa fa-plus-circle fa-5x"></i>
+         <p>Click anywhere to add your first widget</p>
+       </div>
+     </div>
+   </div>
+
+<div ng-if="!board.name">
+  <div class="container">
+    <div class="page header">
+      <h1>This board does not exists.</h1>
+    </div>
+    <p>Do you want to create a <a href="/board">new one</a>?</p>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+doctype html
+html(lang='en', ng-app='wallboard')
+  head
+    meta(http-equiv='X-UA-Compatible', content='IE=Edge,chrome=1')
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title= title
+    link(rel='shortcut icon', href='/favico.ico')
+    link(rel='apple-touch-icon' href='/favico-512.png')
+    link(rel='stylesheet', href='/minified/wallboard.min.css')
+    script(src='/minified/wallboard.min.js')
+    script(src='/socket.io/socket.io.js')
+  body(ng-view,ng-style='{overflow:scrollbar==false ? "hidden" : "auto","background-color":"#f0f0f0"}')
+    i.fa.fa-cog.fa-spin.fa-5x

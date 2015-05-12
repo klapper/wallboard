@@ -1,0 +1,19 @@
+{
+"widgets":
+  [
+   {"template":"simple_value","name":"Simple","description":"Shows a single value with optional header text"},
+   {"template":"list","name":"List","description":"Shows a list of values in vertical form"},
+   {"template":"table","name":"Table","description":"Shows data in tabular format"},
+   {"template":"static_string","name":"Static","description":"Static text can be used for label"},
+   {"template":"image","name":"Image","description":"Show an image"},
+   {"template":"placeholder","name":"Placeholder","description":"Empty widget, can be used for filling empty space in layout "},
+   {"template":"progressbar","name":"Progress bar","description":"Shows a progress bar"},
+   {"template":"progress_circle","name":"Progress circle","description":"Shows a progress on circle layout"},
+   {"template":"h_headline","name":"Horizontal headline","description":"Shows a horizontal scrolling headline"},
+   {"template":"v_headline","name":"Vertical headline","description":"Shows a vertical scrolling headline"},
+   {"template":"time","name":"Current Time","description":"Shows the current time"},
+   {"template":"analogue_clock","name":"Analog clock","description":"Shows the current time in anagloue clock","controller":"analogue_clock.js"},
+   {"template":"leaderboard","name":"Leaderboard","description":"Shows leaderboard"},
+   {"template":"status","name":"Status icon","description":"Status icon"}
+  ]
+}

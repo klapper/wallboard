@@ -1,0 +1,25 @@
+<div ng-style='{"overflow":"hidden",
+                "min-height":"100%",
+                "min-width":"100%",
+                "background-color":data.template_config.background_color}'>
+    <div ng-style='{"top":"0%","position":"absolute","min-width":"100%"}'>
+        <h4 ng-style='{"font-size":data.template_config.header_text_size + "vw",
+                      "color":data.template_config.header_text_color,
+                      "position":"relative",
+                      "font-weight":300}'>
+           {{data.template_config.header_text}}
+       </h4>
+       <table class="table table-condensed" ng-style='{"font-size": data.template_config.text_size + "vw","color":data.template_config.text_color}'>
+         <thead>
+           <tr>
+             <th ng-repeat="columns in data.value[0] track by $index">{{columns}}</th>
+           </tr>
+         </thead>
+         <tbody>
+           <tr ng-repeat="rows in data.value track by $index" ng-if="$index!=0">
+             <td ng-repeat="cells in rows track by $index">{{cells}}</td>
+           </tr>
+         </tbody>
+       </table>
+    </div>  
+</div>

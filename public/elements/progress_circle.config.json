@@ -1,0 +1,52 @@
+  [
+    {
+      "name":"stream_name",
+      "diplay_name":"Stream name",
+      "description":"Please specify the stream name",
+      "type":"stream_selector"
+    },
+  {
+   "type":"divider"
+  },
+  {
+    "name":"text_color",
+    "display_name":"Text Color",
+    "description":"Color of the text",
+    "type":"color_chooser",
+    "value":"#ffffff"
+  },
+  {
+    "name":"progress_color",
+    "display_name":"Progress Color",
+    "description":"Color of progress circle",
+    "type":"color_chooser",
+    "value":"#50e84b"
+  },
+  {
+    "name":"progress_background_color",
+    "display_name":"Progress Background Color",
+    "description":"Background color of progress circle",
+    "type":"color_chooser",
+    "value":"#4e4e4e"
+  },  
+  {
+    "name":"header_text",
+    "display_name":"Header text",
+    "description":"Shows a header text bellow the percentage",
+    "type":"text"
+  },
+  {
+    "name":"header_text_color",
+    "display_name":"Header Text Color",
+    "description":"Color of the header text",
+    "type":"color_chooser",
+    "value":"#c0c0c0"
+  },
+  {
+    "name":"background_color",
+    "display_name":"Background color",
+    "description":"Color of the tile's background",
+    "type":"color_chooser",
+    "value":"#000000"
+  }
+  ]

@@ -1,0 +1,19 @@
+<div ng-controller="analogue_clock_controller" ng-style='{"overflow":"hidden",
+                "min-height":"100%",
+                "min-width":"100%",
+                "background-color":data.template_config.background_color,
+                "background-image":"url(" + data.template_config.background_image + ")",
+                "background-size":"cover"}'>
+    <svg viewbox="0 0 100 100" preserveAspectRatio="xMidYMid meet" width="100%" height="100%">
+    <g transform="translate(50 50)"> 
+       <circle rx="0" ry="0" r="50" fill="#ecf0f1"></circle>
+       
+       <rect ng-repeat="marker in [1,2,3,4,5,6,7,8,9,10,11,12]" width="3" height="10" x="-1.5" y="-50" fill="#2c3e50" ng-attr-transform="rotate({{marker * 30}})"></rect>
+       <rect ng-repeat="marker in [1,2,3,4,6,7,8,9,11,12,13,14,16,17,18,19,21,22,23,24,26,27,28,29,31,32,33,34,36,37,38,39,41,42,43,44,46,47,48,49,51,52,53,54,56,57,58,59]" ng-if="(marker % 5) != 0" width="1.2" height="3.6" x="-0.6" y="-50" fill="#2c3e50" ng-attr-transform="rotate({{marker * 6}})"></rect>
+
+       <rect width="5" height="45" x="-2.5" y="-35" fill="#3498db" ng-attr-transform="rotate({{360 / 12 * current_hour}})"></rect>
+       <rect width="4" height="54" x="-2" y="-46" fill="#2980b9" ng-attr-transform="rotate({{360 / 60 * current_minute}})"></rect>
+       <rect width="1.5" height="50" x="-0.75" y="-37.5" fill="#222222" ng-style='{"-webkit-transition":"-webkit-transform .5s cubic-bezier(1,.75,.52,1.39)","transform":"rotate(" + ("" + (360 / 60 * current_second)) +"deg)"}'></rect>
+    </g>
+    </svg>
+</div>

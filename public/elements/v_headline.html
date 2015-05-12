@@ -1,0 +1,18 @@
+<div ng-style='{"overflow":"hidden","min-height":"100%","min-width":"100%","background-color":data.template_config.background_color}'>
+    <div ng-style='{"top":"3%","position":"absolute","min-width":"100%"}'>
+        <h4 ng-style="{
+                      'color':data.template_config.header_text_color,
+                      'position':'relative',
+                      'font':'1vw \'Segoe UI\', Tahoma, Helvetica, Sans-Serif'
+                      }">
+           {{data.template_config.header_text}}
+       </h4>
+       <div class="v-anim" ng-style='{
+       		"animation-duration":data.value.length + "s","-webkit-animation-duration":data.value.length + "s"
+       		}'>
+       		<p ng-repeat="dataitem in data.value" ng-class-odd="'odd'" ng-class-even="'even'">
+           	{{dataitem}}
+       		</p>
+       </div>
+    </div>  
+</div>

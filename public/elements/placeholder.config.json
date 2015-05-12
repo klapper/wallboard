@@ -1,0 +1,9 @@
+[  
+ {
+    "name":"background_color",
+    "display_name":"Background color",
+    "description":"Color of the tile's background",
+    "type":"color_chooser",
+    "value":"#00000"
+  }
+  ]

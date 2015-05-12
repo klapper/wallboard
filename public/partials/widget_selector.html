@@ -1,0 +1,110 @@
+<div class="modal-content">
+<div ng-if="!selected_widget">
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="close()" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Choose a widget to add <small><a ng-click="">or edit dashboard properties</a></small></h4>
+    </div>
+    <div class="modal-body">
+        <div ng-if="!(widgets.length > 0)" class="loading">
+            <div class="text-center">
+                <i class="fa fa-cog fa-spin fa-4x"></i>
+                <p>Loading...<p>
+            </div>
+        </div>
+        <div class="row" ng-if="(widgets.length > 0)">
+            <input type="text" class="form-control" ng-model="widget_search_bar" placeholder="Search for a widget">
+            <hr>
+                <div class="col-md-4 col-sm-6" ng-repeat="widget in widgets | filter:widget_search_bar">
+                    <div class="thumbnail widget-sample" ng-click="show_config(widget)">
+                        <img class="img-thumbnail img-responsive widget-sample-img" ng-src="/elements/{{widget.template}}.png">
+                        <div class="caption">
+                            <h3>{{widget.name}}</h3>
+                            <p>{{widget.description}}</p>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" ng-click="close()">Close</button>
+    </div>
+</div>
+<div ng-if="selected_widget" ng-animate="{enter: 'widget_selector-enter', leave:'widget_selector-leave'}">
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="close()" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Configure {{selected}} widget</h4>
+    </div>
+    <div class="modal-body">
+      <div class="row">
+        <form ng-if="!(widget_config===undefined)" class="form-horizontal" role="form">
+            <div class="form-group" ng-repeat="item in widget_config">
+              <div ng-if="item.type === 'stream_selector'">
+                <label class="col-sm-3 control-label">{{item.display_name}}</label>
+                <div class="col-sm-8">
+                    <input class="form-control" type="text" placeholder="{{item.name}}" ng-model="item.value" typeahead="stream for stream in stream_list | filter:$viewValue"/>
+                    <p class="help-block">{{item.description}}</p>
+                </div>
+              </div>
+              <div ng-if="(item.type==='text')||(item.type===undefined)">
+                <label class="col-sm-3 control-label">{{item.display_name}}</label>
+                <div class="col-sm-8">
+                  <input class="form-control" type="text" placeholder="{{item.name}}" ng-model="item.value"/>
+                    <p class="help-block">{{item.description}}</p>
+                </div>
+              </div>
+              <div ng-if="item.type==='color_chooser'">
+                <label class="col-sm-3 control-label">{{item.display_name}}</label>              
+                <div class="col-sm-8">
+                    <div class="input-group">
+                        <!--  <input minicolors="minicolors_settings" class="color_chooser form-control minicolors-input" type="minicolors" placeholder="{{item.name}}" ng-model="item.value"/>-->
+                        <span class="input-group-addon clear-background" ng-style='{"background-color":item.value}'>&nbsp;</span>
+                        <input colorpicker="rgba" colorpicker-parent="true" class="form-control" type="text" ng-model="item.value" />
+                    </div>
+                    <p class="help-block">{{item.description}}</p>
+                </div>
+                <!-- <div class="col-sm-2">
+                    <a href="https://kuler.adobe.com/explore/most-popular/?time=all">color palettes</a>
+                </div> -->
+              </div>
+              <div  ng-if="item.type==='checkbox'">
+                <div class="col-offset-3 col-sm-8" >
+                    <input type="checkbox" ng-model="item.value"/>{{item.display_name}}
+                </div>
+                    <p class="help-block">{{item.description}}</p>
+              </div>
+              <div ng-if="item.type==='divider'" class="col-sm-offset-1 col-sm-10">
+                <hr>
+              </div>
+              <div ng-if="item.type==='icon_picker'">
+                <label class="col-sm-3 control-label">{{item.display_name}}</label>
+                <div class="col-sm-8">
+                  <div>
+                    <ui-iconpicker value="{{item.value}}" groups="font-awesome" ng-model="item.value"/>
+                  </div>
+                  <div ng-show="(item.value != undefined)&&(item.value != '')" class="btn btn-default" ng-click="item.value=undefined">Clear icon</div>
+                  <p class="help-block">{{item.description}}</p>
+                </div>
+              </div>              
+          </div>
+        </form>
+        <div ng-if="widget_config===undefined">
+          <p>This widget requires a template that are no longer exists in the system.</p>
+          <p>Delete this widget.</p>
+          <hr>
+          <p>If you want to recreate this widget or use an other widget for this stream, here is the old template configuration: {{current_config.template_config}}</p>
+        </div>
+
+      </div>
+    </div>
+    <div class="modal-footer">
+        <div ng-show="current_config===undefined" class="btn btn-default pull-left" role="button" ng-click="hide_config()">Back</div>
+        <div ng-show="current_config!==undefined" class="btn btn-danger pull-left" role="button" ng-click="delete_widget()">Delete</div>
+        <span ng-show="((current_config!==undefined)&&(widget_config!==undefined))">
+          <div class="btn btn-success" role="button" ng-click="modify_widget()">Modify widget</div>
+        </span>
+        <span ng-show="current_config===undefined">
+          <div class="btn btn-success" role="button" ng-click="add_widget()">Add widget</div>
+        </span>
+        <button type="button" class="btn btn-default" ng-click="close()">Close</button>
+    </div>
+</div>    

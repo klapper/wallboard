@@ -1,0 +1,22 @@
+[
+  {
+    "name":"content",
+    "display_name":"Content",
+    "description":"Show this text",
+    "type":"text"
+  },
+  {
+    "name":"text_color",
+    "display_name":"Text color",
+    "description":"Color of the text",
+    "type":"color_chooser",
+    "value":"#ffffff"
+  },
+  {
+    "name":"background_color",
+    "display_name":"Background color",
+    "description":"",
+    "type":"color_chooser",
+    "value":"#000000"
+  }
+]

@@ -1,0 +1,36 @@
+<div>
+	<div class="container">
+		<div class="row">
+			<div class="panel col-sm-offset-2 col-sm-8">
+				<div class="panel-body text-center">
+					<div class="section-number">
+						<p>3</p>
+					</div>
+					<div class="welcome-section-header">
+						<p>What oprerating system are you using?</p>
+					</div>
+					<div class="welcome-section-body">
+					</div>
+					<div class="btn-group welcome-section-footer">
+						<div type="button" class="btn btn-default" ng-class="{active: selected=='windows'}"
+							ng-click="selected = 'windows'">Windows</div>
+						<div type="button" class="btn btn-default" ng-class="{active: selected=='linux'}"
+							ng-click="selected = 'linux'">Linux / AIX / Max OS</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div ng-if="selected == 'windows'">
+		<section class="welcome-section section">
+			<div class="animated fadeInRightSmall" ng-include
+				src="'/partials/home.help.prog.powershell.html'" />
+		</section>
+	</div>
+	<div ng-if="selected == 'linux'">
+		<section class="welcome-section section">
+			<div class="animated fadeInRightSmall" ng-include
+				src="'/partials/home.help.cmd.linux.html'" />
+		</section>
+	</div>	
+</div>

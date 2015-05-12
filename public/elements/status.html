@@ -1,0 +1,24 @@
+<div ng-style='{"overflow":"hidden",
+                "min-height":"100%",
+                "min-width":"100%",
+                "background-color":data.template_config.background_color,
+                "background-image":"url(" + data.template_config.background_image + ")",
+                "background-size":"cover"}'>
+    <div ng-style='{"top":"10%","position":"absolute","min-width":"100%"}'>
+        <h4 ng-style='{"font-size":data.template_config.header_text_size + "vw",
+                      "color":data.template_config.header_text_color,
+                      "position":"relative",
+                      "font-weight":300,
+                      "margin-top":"0.1em",
+                      "margin-bottom":"0.1em"}'>
+           {{data.template_config.header_text}}
+       </h4>
+       <div ng-style='{"font-size":data.template_config.icon_size + "vw"}'>
+       <i ng-if="data.value==0" class="fa fa-check-circle status-icon-ok"'></i>
+       <i ng-if="data.value==1" class="fa fa-exclamation-circle status-icon-warning"></i>
+       <i ng-if="data.value==2" class="fa fa-times-circle status-icon-error"></i>
+       <i ng-if="data.value==3" class="fa fa-question-circle status-icon-unknown"></i>
+       <!-- <i ng-if="data.value==4" class="fa fa-info-circle" ng-style='{"color":"green"}'></i> -->
+       </div>
+    </div>  
+</div>

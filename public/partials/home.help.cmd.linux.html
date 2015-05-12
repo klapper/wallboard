@@ -1,0 +1,27 @@
+<div>
+	<div class="container">
+		<div class="row">
+			<div class="panel col-sm-offset-2 col-sm-8">
+				<div class="panel-body text-center">
+					<div class="section-number">
+						<p>4</p>
+					</div>
+					<div class="welcome-section-header">
+						<p>Sending updates from Linux / AIX / Mac OS</p>
+					</div>
+					<div class="welcome-section-body">
+						<p>
+						<pre>curl -X POST -H "Content-Type: application/json" -d '{"stream_name":"element1","value":"4"}' https://servername/send</pre>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+<div class="container">
+    <div in-view="dyk_is_in_view=(dyk_is_in_view || $inview)"  class="welcome-section section">
+	    <div ng-show="dyk_is_in_view" class="animated fadeInRightSmall" ng-include src="'/partials/home.did_you_know.html'" />
+    </div>
+</div>
